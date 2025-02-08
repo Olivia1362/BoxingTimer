@@ -1,22 +1,116 @@
 .main {
-  display: flex;
+  display : flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 4rem 0;
+  margin: 0;
+  padding: 1.5rem; 
+
+  background-image: url('../public/BackgroundImg.jpg');
+  background-position: center;
+  background-size: cover;
+
+}
+
+.header {
+  width: 100%;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* background-color: blue; */
 }
 
 .title {
-  line-height: 1.15;
+  background-image: linear-gradient(90deg, blue, red);
+  background-clip: text;
+  color: transparent;
+  text-align: center;
+  font-family: 'IBM Plex Mono', serif;
+  line-height: 1.25;
   font-size: 4rem;
+  margin: 0;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.gameContainerParent {
+  width: 55%;
+  min-height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  /* background-color: red; */
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+
+.gameContainer {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0;
+  padding: 0rem;
+
+  border-radius: 1rem;
+  border: blue, 0.5px, solid;
+  background-color: rgba(255, 255, 255, 0.5);
+  
+  text-align: center;
+  font-family: 'IBM Plex Mono', serif;
+  font-weight: bold;
+
+  padding: 2rem;
 }
+
+.settingsGame {
+  font-size: 2rem;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+.input {
+  width: auto;
+  height: 2rem;
+  text-align: center;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.cardsContainer {
+  max-width: 70em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 1rem;
+  margin: 2rem 0;
+ 
+}
+
+.buttonsGame {
+  width: 50%;
+  height: 3rem;
+  display: flex;
+
+  justify-content:space-around;
+  margin: 0;
+  padding-bottom: 2rem;
+}
+
+.button {
+  width: 30%;
+  height: 3rem;
+  background-color: rgb(55, 96, 229);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+

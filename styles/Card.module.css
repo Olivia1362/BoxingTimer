@@ -1,0 +1,10 @@
+.card {
+    width: 7rem;
+    height: 7rem;
+    baclground-color: white;
+
+    text-align: center;
+    font-family: 'IBM Plex Mono', serif;
+    font-weight: bold;
+    font-size: 5rem;
+}
