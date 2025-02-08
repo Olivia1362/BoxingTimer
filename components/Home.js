@@ -10,8 +10,9 @@ function Home() {
     const [showImage, setShowImage] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(null);
     const [intervalId, setIntervalId] = useState(null);
+    const [cadence, setCadence] = useState(null);
 
-    // Determine how many cards the user wants to play with ------------------------------------------------
+    // Update inputs with the valued entered by user ------------------------------------------------
     function handleNumberOfCards(e) {
         setNumberOfCards(e.target.value);
     }
@@ -21,6 +22,10 @@ function Home() {
     //     cards.push(<Card key={i} />);
     //     console.log("CARDS:", cards);
     // }
+
+    function handleCadence(elt) {
+        setCadence(elt.target.value);
+    }
 
     // Randomize the cards -------------------------------------------------------------------------------
 
@@ -43,7 +48,6 @@ function Home() {
         setRandomNumbers(getRandomNum(numberOfCards));
     }
 
-
     // Start the game
     function handleStart() {
         setShowImage(true);
@@ -55,7 +59,7 @@ function Home() {
                 const randomIndex = Math.floor(Math.random() * numberOfCards);
                 setCurrentIndex(randomIndex);
             }
-        }, 3000);
+        }, cadence * 1000);
 
         setIntervalId(idx);
         console.log("Start");
@@ -69,6 +73,7 @@ function Home() {
         setCurrentIndex(null);
         if (intervalId) clearInterval(intervalId);
         console.log("Stop");
+        setCadence(null);
     }
 
     return (
@@ -91,6 +96,16 @@ function Home() {
                             className={styles.input}
                         />
                     </label>
+                    <label className={styles.settingsGame}>
+                        Which cadence would you like ?
+                        <input
+                            name="cadence"
+                            value={cadence || ""}
+                            onChange={handleCadence}
+                            placeholder="Cadence in seconds"
+                            className={styles.input}
+                        />
+                    </label>
 
                     <div>
                         {showImage && (
@@ -106,10 +121,11 @@ function Home() {
 
                     <div className={styles.cardsContainer}>
                         {randomNumbers.map((num, index) => (
-                            <Card 
-                            key={index} 
-                            value={num} 
-                            isHighlighted={index === currentIndex} />
+                            <Card
+                                key={index}
+                                value={num}
+                                isHighlighted={index === currentIndex}
+                            />
                         ))}
                     </div>
 
